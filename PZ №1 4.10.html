@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        document.write("Task 10  Написать функцию, которая принимает дату (день, месяц, год) и возвращает дату следующего дня в виде строки «дд.мм.гггг». Проверку на високосный год желательно написать отдельной функцией.")
+        
+
+        // Всё относительно нормально работает, только нашел один баг
+        // 1. при вы воде окна ошибки, самое последнее окно alert(которое выводит на экран следующий день) тоже вылазит только с надписью "undefined"
+        
+
+        user_month=prompt("Введите месяц","1");
+        user_day=+prompt("Введите день","1");
+        user_year=+prompt("Введите год","1990");
+        var days=28
+        function leap_year(user_year){
+            
+            leap_year=((user_year%400)===0 || (user_year%4)===0 && (user_year%100)!==0)?  days=29 :  days=28;  // Переделал под функцию проверку на високосный год 
+            return days
+        }
+
+        function date (user_day,user_month,user_year){
+
+        var january = 31                              //переменные содержат число дней в месяцах обычного года
+        var february = leap_year(user_year)
+        var march = 31
+        var april = 30
+        var may = 31
+        var june = 30
+        var jule = 31
+        var august = 31
+        var september = 30
+        var october = 31
+        var november = 30
+        var december = 31
+        var sintaxis=true;
+
+
+
+        var year=january+february+march+april+may+june+jule+august+september+october+november+december;                 // переменная содержит число дней в году
+        if(user_day==NaN||user_month==NaN||user_year==NaN){                                                             // условие выводит окно с предупреждением о том что одно из значений введено не правильно и отменяет вывод окна со следующей датой
+        sintaxis=false;   
+        }
+        else if(user_month=="January"||user_month=="january"||user_month=="01"||user_month=="1"){                       // проверяем то что введённое пользователем значение месяца подходит нам
+            user_month=january                                 //переменная принимает количество дней в месяце
+        
+             if(user_day>user_month||user_day<0)            //условие проверяет что введённый день умещается в рамки месяца
+            alert("В введённом вами месяце нет таких дней")
+             else{                                          //если всё нормально прибавляем к указаной пользователем дате ++день и расчитываем результат 
+            day_result=user_day+1;                          
+                if(day_result>january){                    // если получившиеся дни привышают количество дней в текущем месяце то меняем результат
+                month_result="02";
+                day_result=1;
+                year_result=user_year
+                return day_result+"."+month_result+"."+year_result
+            }
+                else{                                      //если месяц не меняется то оставляем всё как есть
+                year_result=user_year
+                month_result="01"
+                return day_result+"."+month_result+"."+year_result
+            }   
+        }  
+    }
+        else if(user_month=="February"||user_month=="february"||user_month=="02"||user_month=="2"){ 
+            user_month=february
+        
+                if(user_day>user_month||user_day<0)
+                alert("В введённом вами месяце нет таких дней")
+                else{
+                day_result=user_day+1; 
+                    if(day_result>february){
+                    month_result="03";
+                    day_result=1;
+                    year_result=user_year
+                    return day_result+"."+month_result+"."+year_result
+                }
+                    else{
+                    year_result=user_year
+                    month_result="02"
+                    return day_result+"."+month_result+"."+year_result
+                }   
+            }  
+        }
+        else if(user_month=="March"||user_month=="march"||user_month=="03"||user_month=="3"){ 
+            user_month=march
+    
+                if(user_day>user_month||user_day<0)
+                alert("В введённом вами месяце нет таких дней")
+                else{
+                day_result=user_day+1; 
+                    if(day_result>march){
+                    month_result="04";
+                    day_result=1;
+                    year_result=user_year
+                    return day_result+"."+month_result+"."+year_result
+                }
+                    else{
+                    year_result=user_year
+                    month_result="03"
+                    return day_result+"."+month_result+"."+year_result
+                }   
+            }  
+        }
+        else if(user_month=="April"||user_month=="april"||user_month=="04"||user_month=="4"){ 
+            user_month=april
+        
+                if(user_day>user_month||user_day<0)
+                alert("В введённом вами месяце нет таких дней")
+                else{
+                day_result=user_day+1; 
+                    if(day_result>april){
+                    month_result="05";
+                    day_result=1;
+                    year_result=user_year
+                    return day_result+"."+month_result+"."+year_result
+                }
+                    else{
+                    year_result=user_year
+                    month_result="04"
+                    return day_result+"."+month_result+"."+year_result
+                }   
+            }  
+        }
+        else if(user_month=="May"||user_month=="may"||user_month=="05"||user_month=="5"){ 
+            user_month=may
+        
+                if(user_day>user_month||user_day<0)
+                alert("В введённом вами месяце нет таких дней")
+                else{
+                day_result=user_day+1; 
+                    if(day_result>may){
+                    month_result="06";
+                    day_result=1;
+                    year_result=user_year
+                    return day_result+"."+month_result+"."+year_result
+                }
+                    else{
+                    year_result=user_year
+                    month_result="05"
+                    return day_result+"."+month_result+"."+year_result
+                }   
+            }  
+        }
+        else if(user_month=="June"||user_month=="june"||user_month=="06"||user_month=="6"){ 
+            user_month=june
+        
+                if(user_day>user_month||user_day<0)
+                alert("В введённом вами месяце нет таких дней")
+                else{
+                day_result=user_day+1; 
+                    if(day_result>june){
+                    month_result="07";
+                    day_result=1;
+                    year_result=user_year
+                    return day_result+"."+month_result+"."+year_result
+                }
+                    else{
+                    year_result=user_year
+                    month_result="06"
+                    return day_result+"."+month_result+"."+year_result
+                }   
+            }  
+        }
+        else if(user_month=="Jule"||user_month=="jule"||user_month=="07"||user_month=="7"){ 
+            user_month=jule
+        
+                if(user_day>user_month||user_day<0)
+                alert("В введённом вами месяце нет таких дней")
+                else{
+                day_result=user_day+1; 
+                    if(day_result>jule){
+                    month_result="08";
+                    day_result=1;
+                    year_result=user_year
+                    return day_result+"."+month_result+"."+year_result
+                }
+                    else{
+                    year_result=user_year
+                    month_result="07"
+                    return day_result+"."+month_result+"."+year_result
+                }   
+            }  
+        }
+        else if(user_month=="August"||user_month=="august"||user_month=="08"||user_month=="8"){ 
+            user_month=august
+        
+                if(user_day>user_month||user_day<0)
+                alert("В введённом вами месяце нет таких дней")
+                else{
+                day_result=user_day+1; 
+                    if(day_result>august){
+                    month_result="09";
+                    day_result=1;
+                    year_result=user_year
+                    return day_result+"."+month_result+"."+year_result
+                }
+                    else{
+                    year_result=user_year
+                    month_result="08"
+                    return day_result+"."+month_result+"."+year_result
+                }   
+            }  
+        }
+        else if(user_month=="September"||user_month=="september"||user_month=="09"||user_month=="9"){ 
+            user_month=september
+        
+                if(user_day>user_month||user_day<0)
+                alert("В введённом вами месяце нет таких дней")
+                else{
+                day_result=user_day+1; 
+                    if(day_result>september){
+                    month_result="10";
+                    day_result=1;
+                    year_result=user_year
+                    return day_result+"."+month_result+"."+year_result
+                }
+                    else{
+                    year_result=user_year
+                    month_result="09"
+                    return day_result+"."+month_result+"."+year_result
+                }   
+            }  
+        }
+        else if(user_month=="October"||user_month=="october"||user_month=="10"){ 
+            user_month=october
+        
+                if(user_day>user_month||user_day<0)
+                alert("В введённом вами месяце нет таких дней")
+                else{
+                day_result=user_day+1; 
+                    if(day_result>october){
+                    month_result="11";
+                    day_result=1;
+                    year_result=user_year
+                    return day_result+"."+month_result+"."+year_result
+                }
+                    else{
+                    year_result=user_year
+                    month_result="10"
+                    return day_result+"."+month_result+"."+year_result
+                }   
+            }  
+        }
+        else if(user_month=="November"||user_month=="november"||user_month=="11"){ 
+            user_month=november
+        
+                if(user_day>user_month||user_day<0)
+                alert("В введённом вами месяце нет таких дней")
+                else{
+                day_result=user_day+1; 
+                    if(day_result>november){
+                    month_result="12";
+                    day_result=1;
+                    year_result=user_year
+                    return day_result+"."+month_result+"."+year_result
+                }
+                else{
+                    year_result=user_year
+                    month_result="11"
+                    return day_result+"."+month_result+"."+year_result
+                }   
+            }  
+        }
+        else if(user_month=="December"||user_month=="december"||user_month=="12"){ 
+            user_month=december
+        
+                if(user_day>user_month||user_day<0)
+                alert("В введённом вами месяце нет таких дней")
+                else{
+                day_result=user_day+1; 
+                    if(day_result>december){
+                    month_result="01";
+                    day_result=1;
+                    year_result=user_year+1
+                    return day_result+"."+month_result+"."+year_result
+                }
+                    else{
+                    year_result=user_year
+                    month_result="12"
+                    return day_result+"."+month_result+"."+year_result
+                }   
+            }  
+        }
+        else
+        sintaxis=false;
+
+        if(sintaxis==true)                                      //если всё введено корректно то получаем следующую дату
+        return day_result+"."+month_result+"."+year_result      //day_result==получившийся день
+                                                                //month_result== получившийся месяц
+                                                                //year_result==получившийся год
+        else 
+        alert("Одно или больше введённых вами значений введено не коректно, по пробуйте снова")
+    }
+    
+    alert(date(user_day,user_month,user_year))
+    </script>
+</body>
+</html>

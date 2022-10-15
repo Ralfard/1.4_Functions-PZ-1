@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        document.write("Task 5   Написать функцию, которая принимает число и выводит таблицу умножения для этого числа. Вызовите функцию для всех чисел от 2 до 9.")
+        
+
+        function multiplication_table(x){
+            document.write("<br><br>Умножение на "+x);
+            for(i=2;i<11;i++){
+                equals=i*x
+                document.write("<br>"+x+"x"+i+"="+equals);
+            }
+        }
+        
+        multiplication_table(2)
+        multiplication_table(3)
+        multiplication_table(4)
+        multiplication_table(5)
+        multiplication_table(6)
+        multiplication_table(7)
+        multiplication_table(8)
+        multiplication_table(9)
+    </script>
+</body>
+</html>

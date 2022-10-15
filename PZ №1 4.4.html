@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        document.write("Task 4   Написать функцию, которая проверяет, является ли переданное ей число простым.")
+
+        function prime_number (x){
+            let diviver=0
+            for(i=x;i!=0;--i){//находим делители
+                modul=x%i
+                if(modul==0)
+                diviver++
+            }
+            if(diviver>2)//если делителей больше 2 то число не простое
+                return "НЕ "
+            else
+                return ""
+        }
+
+        let num=prompt("Введите число что бы проверить, является ли оно простым", "19")
+
+        alert("Введённое число "+prime_number(num)+"является простым числом")
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        document.write("Task 8   Написать функцию, которая принимает от 1 до 5 чисел и возвращает большее из них.")
+
+        function maximum(n1,n2,n3,n4,n5){
+                if(arguments.length==0) 
+                return "Вы не ввели число";
+                else if(arguments.length==1)
+                return "Вы ввели всего одно число:"+n1
+                else if(arguments.length==2){
+                    if(n2>n5&&n2>n3&&n2>n4&&n2>n1)
+                    return n2
+                    else
+                    return n1
+                }
+                else if(arguments.length==3){
+                    if(n3>n2&&n3>n1)
+                    return n3
+                    else if(n2>n1&&n2>n3)
+                    return n2
+                    else
+                    return n1
+                }
+                else if(arguments.length==4){
+                    if(n4>n3&&n4>n2&&n4>n1)
+                    return n4
+                    else if(n3>n2&&n3>n1&&n3>n4)
+                    return n3
+                    else if(n2>n1&&n2>n4&&n2>n3)
+                    return n2
+                    else
+                    return n1
+                }
+                else if(arguments.length==5){
+                    if(n5>n4&&n5>n3&&n5>n2&&n5>n1)
+                    return n5
+                    else if(n4>n5&&n4>n3&&n4>n2&&n4>n1)
+                    return n4
+                    else if(n3>n5&&n3>n4&&n3>n2&&n3>n1)
+                    return n3
+                    else if(n2>n5&&n2>n3&&n2>n4&&n2>n1)
+                    return n2
+                    else
+                    return n1
+                }
+                else
+                return "Введите от 1 до 5"
+        }
+
+
+        let num1=Number(prompt("Введите число 1", "3"));
+        let num2=Number(prompt("Введите число 2", "5"));
+        let num3=Number(prompt("Введите число 3", "7"));
+        let num4=Number(prompt("Введите число 4", "3"));
+        let num5=Number(prompt("Введите число 5", "4"));
+
+
+        alert("Наибольшее число "+maximum(num1,num2,num3,num4,num5))
+
+    </script>
+</body>
+</html>

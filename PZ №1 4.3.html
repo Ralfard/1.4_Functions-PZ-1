@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        document.write("Task 3   Написать функцию, которая принимает 2 числа и знак (+ - * /), считает пример и возвращает результат.")
+
+        function example(x,sign,y){
+            switch(sign){
+                case "+" : return x+y;
+                break;
+                case "-" : return x-y;
+                break;
+                case "*" : return x*y;
+                break;
+                case "/" : return x/y;
+                break;
+            }
+        }
+
+        let num1=Number(prompt("Введите число 1", "28"))
+        let mathematicalOperation=prompt("Введите один из предоставленных знаков (+ - * /)" )
+        let num2=Number(prompt("Введите число 2", "2"))
+
+        alert(example(num1, mathematicalOperation ,num2))
+
+
+    </script>
+</body>
+</html>

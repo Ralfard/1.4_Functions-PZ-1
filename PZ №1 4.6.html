@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        document.write("Task 6   Написать функцию, которая реализует работу оператора %. Функция принимает 2 параметра и возвращает остаток от деления первого параметра на второй. В функции использовать только + - * /, оператор % не использовать.")
+
+        function modul(divisible, diviver){
+            let x=0
+            let y=0
+            x=divisible/diviver;// получаем деление с дробной частью
+            y=Math.floor(divisible/diviver); //получаем деление без дроби
+            return Math.round((x-y)*diviver); // вычитаем из результата с дробной частью результат без дроби и умножаем полученую дробь на делитель и заканчиваем округлением до целого числа
+        }
+
+        let num1=prompt("Введите делимое число", "8")
+        let num2=prompt("Введите делитель", "3")
+
+        alert(modul(num1,num2))
+
+    </script>
+</body>
+</html>

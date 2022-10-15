@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        document.write("Task 9   Написать функцию, которая выводит все четные или нечетные числа, в указанном пользователем диапазоне. Какие числа выводить, определяется третьим параметром типа bool (true – четные, false – нечетные).")
+        
+        function range(from,to,even) {
+            for(i=from;i<(to+1);++i){
+                    if((i%2)===0 && Boolean(even)==true)
+                    document.write("<br>"+i);
+                    else if((i%2)!==0 && Boolean(even)==false)
+                    document.write("<br>"+i);
+                    // 
+                }
+        }
+
+        let max=Number(prompt("Введите конец диапазона","21"))
+        let min=Number(prompt("Введите начало диапазона","5"))
+        let boolean=confirm("Нажмите ОК, если хотите вывести только четные числа или отмена, если нечетные")
+        
+        range(min, max, boolean)
+    </script>
+</body>
+</html>
